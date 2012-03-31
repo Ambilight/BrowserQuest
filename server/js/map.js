@@ -37,6 +37,7 @@ module.exports = Map = cls.Class.extend({
         this.isLoaded = true;
         
         // zone groups
+		// Magic constants:
     	this.zoneWidth = 28;
     	this.zoneHeight = 12;
     	this.groupWidth = Math.floor(this.width / this.zoneWidth);
@@ -54,6 +55,8 @@ module.exports = Map = cls.Class.extend({
     	this.ready_func = f;
     },
 
+	// It seems like magic and not much understandable
+	// Why not using it in generateCollisionGridMethod? Let's try.
     tileIndexToGridPosition: function(tileNum) {
         var x = 0,
             y = 0;
@@ -76,6 +79,7 @@ module.exports = Map = cls.Class.extend({
         return (y * this.width) + x + 1;
     },
 
+	/* I left original code commented that you can verify complexity of estimation
     generateCollisionGrid: function() {
         this.grid = [];
     
@@ -93,8 +97,38 @@ module.exports = Map = cls.Class.extend({
                 }
             }
             //log.info("Collision grid generated.");
+			
+			// Estimation of complexity:
+			// Better O ( this.height * this.width + 1 )
+			// Worse O ( this.height * this.width * this.collisions.length )
+
         }
     },
+	*/
+
+	generateCollisionGrid: function ()
+	{
+		this.grid = new Array ();
+		if ( this.isLoaded )
+		{
+			for ( var i = 0; i < this.height; i++ )
+			{
+				this.grid [i] = new Array ();
+				for ( var j = 0; j < this.width; j++ )
+				{
+					this.grid [i][j] = 0;
+				}
+			}
+			for ( var tileIndex in this.collisions )
+			{
+				var gridPosition = tileIndexToGridPosition ( tileIndex );
+				this.grid [ gridPosition.x ] [ gridPosition.y ] = 1;
+			}
+			
+			// Estimation of complexity:
+			// O ( this.collisions.length + this.heigth * this.width )
+		}
+	}
 
     isOutOfBounds: function(x, y) {
         return x <= 0 || x >= this.width || y <= 0 || y >= this.height;
