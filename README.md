@@ -1,4 +1,10 @@
-BrowserQuest
-============
-
-Documentation is located in client and server directories.
+#Fork features:
+- Map editor;  (In Progress)
+- New Key Bindings: arrows control, auto pick up loot in 1 cell range;  (In Progress)
+- Auto response to mob attacks;  (In Progress)
+- Little bit of crafting: 9 levels upgrades of weapon and armor with upgrade stones. Stones drops very rarely from hight-level bosses;  (In Progress)
+- New rare weapons: one for each boss;  (In Progress)
+- More waste lands, mobs, bosses, villages, npc's, caves, armors, pots and weapons.  (In Progress)
+- +20 new achievements;  (In Progress)
+- Multilanguage support;  (In Progress)
+- User authentication;  (In Progress)
