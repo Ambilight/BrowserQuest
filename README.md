@@ -1,4 +1,4 @@
-#Fork features:
+#Fork goal:
 - Map editor;  (In Progress)
 - New Key Bindings: arrows control, auto pick up loot in 1 cell range;  (In Progress)
 - Auto response to mob attacks;  (In Progress)
