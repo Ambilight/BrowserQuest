@@ -27,7 +27,6 @@ module.exports = Map = cls.Class.extend({
     },
 
     initMap: function(map) {
-		// Why don't use this = map?
         this.width = map.width;
         this.height = map.height;
         this.collisions = map.collisions;
@@ -58,26 +57,22 @@ module.exports = Map = cls.Class.extend({
 
 	// It seems like magic and not much understandable
 	// Why not using it in generateCollisionGridMethod? Let's try.
-    tileIndexToGridPosition: function(tileNum)
-	{
+    tileIndexToGridPosition: function(tileNum) {
         var x = 0,
             y = 0;
         
-        var getX = function ( num, w )
-		{
-            if ( num == 0 )
-			{
+        var getX = function(num, w) {
+            if(num == 0) {
                 return 0;
             }
             return (num % w == 0) ? w - 1 : (num % w) - 1;
         }
     
         tileNum -= 1;
-        x = getX( tileNum + 1, this.width );
-        y = Math.floor( tileNum / this.width );
+        x = getX(tileNum + 1, this.width);
+        y = Math.floor(tileNum / this.width);
     
-		// Why don't use pos(x,y) -> {x:x,y:y} function?
-        return { x:x, y:y };
+        return { x: x, y: y };
     },
 
     GridPositionToTileIndex: function(x, y) {
@@ -248,13 +243,10 @@ module.exports = Map = cls.Class.extend({
     }
 });
 
-// Improve code readability:
-var pos = function( x, y )
-{
+var pos = function(x, y) {
     return { x: x, y: y };
 };
 
-// Little bit of bugfix here and improving code readability:
-var equalPositions = function( pos1, pos2 ) {
-    return ( pos1.x === pos2.x ) && ( pos1.y === pos2.y );
+var equalPositions = function(pos1, pos2) {
+    return pos1.x === pos2.x && pos2.y === pos2.y;
 };
