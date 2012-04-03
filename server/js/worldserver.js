@@ -124,7 +124,7 @@ module.exports = World = cls.Class.extend({
         });
         
         // Called when an entity is attacked by another entity
-        this.onEntityAttack(function(attacker) {
+        this.onEntityAttack(function(onEntityAttack) {
             var target = self.getEntityById(attacker.target);
             if(target && attacker.type === "mob") {
                 var pos = self.findPositionNextTo(attacker, target);
