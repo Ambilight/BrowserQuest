@@ -6,3 +6,6 @@ config_local*
 client/audio
 .DS_Store
 *~&
+doc/BrowserQuest.uml~
+
+doc/ClassDiagram.uml~
