@@ -1,24 +1,28 @@
-ClassDiagram.uml was created using ArgoUML
+*ClassDiagram.uml was created using ArgoUML*
 
-**Documentation progress:**
+#Documentation progress:
+##Done
+- character
+- checkpoint
+- entity
+- shared/gametypes
+- map
+- message
+- mob
+- npc
+- player
+- properties
+- worldserver
+- ws
+
+##Not done yet
 - area
-+ character
-+ checkpoint
 - chest
 - chestarea
-+ entity
 - format
 - formulas
 - item
 - main
-+ map
-+ message
 - metrics
-+ mob
 - mobarea
-+ npc
-+ player
-+ properties
 - utils
-+ worldserver
-- ws
