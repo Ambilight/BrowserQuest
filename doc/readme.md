@@ -14,15 +14,14 @@
 - properties
 - worldserver
 - ws
-
-##Not done yet
+- item
 - area
-- chest
 - chestarea
+- chest
+- mobarea
 - format
 - formulas
-- item
-- main
 - metrics
-- mobarea
 - utils
+
+All classes displayed on a class diagram.
